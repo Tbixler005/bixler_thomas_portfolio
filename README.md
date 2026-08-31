@@ -1,6 +1,4 @@
-# bixler_thomas_portfolio
-A hub for all of my completed and current projects. 
-# Thomas Bixler — Portfolio
+# Thomas Bixler's Portfolio
 
 Psychology (B.S.) and Applied Statistics student at the University of Pittsburgh,
 focused on I-O psychology and people analytics. Completed projects have their own
@@ -11,16 +9,16 @@ it develops.
 A 2×2 between-subjects experiment (N = 108) I designed, ran, and analyzed for my
 research methods course and co-authored as an APA paper. It found a significant
 positive correlation between intellectual humility and apology quality, with null
-experimental effects traced to a weak manipulation — reported openly rather than
+experimental effects traced to a weak manipulation and reported openly rather than
 hidden.
 
 📁 [View project files →](intellectual-humility-apology)
 
 ## Cognitive Psychology Laboratory
-*🚧 In progress — Fall 2026*
+*🚧 In progress | Fall 2026*
 
 An individual research question and paper within a three-person group. I'm
-analyzing a published dataset in Jamovi — reading its documentation, defining and
+analyzing a published dataset in Jamovi, reading its documentation, defining and
 defending participant exclusion criteria, and selecting tests for my research
 question — then writing the results and discussion of an APA paper. I'm also
 developing an original experiment proposal end to end: a literature-grounded
@@ -33,7 +31,7 @@ progresses.
 📁 [View project files →](cognitive-psychology-lab)
 
 ## Organizational Psychology
-*🚧 In progress — Fall 2026*
+*🚧 In progress | Fall 2026*
 
 Applied organizational-behavior projects. The final team case study diagnoses a
 real organizational problem, synthesizing five peer-reviewed articles from top I-O
@@ -47,7 +45,7 @@ reflection. Materials will be added here as the course progresses.
 ---
 
 **Research experience:** Research Assistant, Web & Peers Lab (LRDC, University of
-Pittsburgh; PI: Prof. Chris Schunn) — structured coding of peer-feedback data and
+Pittsburgh; PI: Prof. Chris Schunn). Structured coding of peer-feedback data and
 reproducible Stata analysis workflows. *(Lab data isn't publicly shareable, so
 this work is described here rather than posted as files.)*
 
