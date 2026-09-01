@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Thomas Bixler, Quantitative Psychology & People Analytics</title>
+<meta name="description" content="Portfolio of Thomas Bixler: research and coursework in I-O psychology and people analytics." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --paper: #F5F6F4; --surface: #FFFFFF; --ink: #1B2733; --muted: #616B78;
+    --accent: #146B63; --accent-soft: #E4EEEC; --line: #E1E4E1;
+    --serif: "Fraunces", Georgia, "Times New Roman", serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    --mono: "IBM Plex Mono", "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans);
+    font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 28px; }
+
+  .eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin: 0 0 18px; }
+
+  .topbar { position: sticky; top: 0; z-index: 20; background: rgba(245,246,244,0.88); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  .topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 16px; padding-bottom: 16px; }
+  .brand { font-family: var(--serif); font-size: 18px; font-weight: 600; letter-spacing: -0.01em; color: var(--ink); }
+  .nav { display: flex; gap: 22px; font-size: 14px; flex-wrap: wrap; }
+  .nav a { color: var(--muted); }
+  .nav a:hover { color: var(--ink); text-decoration: none; }
+  @media (max-width: 620px) { .nav { display: none; } }
+
+  .hero { position: relative; padding: 96px 0 72px; overflow: hidden; }
+  .hero::before {
+    content: ""; position: absolute; inset: 0;
+    background-image: radial-gradient(var(--line) 1.2px, transparent 1.2px); background-size: 26px 26px;
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 78%);
+    mask-image: linear-gradient(to bottom, #000 0%, transparent 78%); opacity: 0.7; pointer-events: none;
+  }
+  .hero .wrap { position: relative; }
+  .hero h1 { font-family: var(--serif); font-weight: 500; font-size: clamp(2.5rem, 6.5vw, 4rem); line-height: 1.04; letter-spacing: -0.02em; margin: 0 0 22px; }
+  .lede { font-size: clamp(1.05rem, 2.2vw, 1.28rem); color: var(--ink); max-width: 640px; margin: 0 0 20px; }
+  .lede .thin { color: var(--muted); }
+  .hero p.detail { color: var(--muted); max-width: 640px; margin: 0 0 34px; }
+
+  .links { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 13px; letter-spacing: 0.02em;
+    padding: 10px 16px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--ink);
+    transition: border-color .18s ease, color .18s ease, background .18s ease;
+  }
+  .btn:hover { text-decoration: none; border-color: var(--accent); color: var(--accent); }
+  .btn.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .btn.primary:hover { background: #0f5750; color: #fff; }
+
+  .section { padding: 64px 0; border-top: 1px solid var(--line); }
+  .section h2 { font-family: var(--serif); font-weight: 500; font-size: 1.7rem; letter-spacing: -0.01em; margin: 0 0 8px; }
+  .section > .wrap > p.intro { color: var(--muted); max-width: 620px; margin: 0 0 8px; }
+
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 26px 28px; margin-top: 22px; transition: border-color .18s ease, box-shadow .18s ease; }
+  .card:hover { border-color: #cdd3cf; box-shadow: 0 6px 22px -14px rgba(27,39,51,0.28); }
+  .card .flag { font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); padding: 3px 9px; border-radius: 4px; display: inline-block; margin-bottom: 14px; }
+  .card h3 { font-family: var(--serif); font-weight: 600; font-size: 1.28rem; margin: 0 0 10px; letter-spacing: -0.01em; }
+  .card p { margin: 0 0 16px; color: var(--muted); }
+  .card p .ink { color: var(--ink); }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 16px; list-style: none; padding: 0; }
+  .meta li { font-family: var(--mono); font-size: 12px; color: var(--muted); border: 1px solid var(--line); border-radius: 5px; padding: 4px 9px; }
+  .card-links { display: flex; gap: 18px; flex-wrap: wrap; font-size: 14px; font-family: var(--mono); letter-spacing: 0.01em; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+  .tag { font-family: var(--mono); font-size: 13px; padding: 7px 13px; background: var(--surface); border: 1px solid var(--line); border-radius: 7px; color: var(--ink); }
+  .tag-group { margin-top: 22px; }
+  .tag-group h4 { font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin: 0 0 4px; }
+
+  .contact p { color: var(--muted); max-width: 560px; }
+  footer { border-top: 1px solid var(--line); padding: 36px 0 60px; color: var(--muted); font-family: var(--mono); font-size: 12px; letter-spacing: 0.02em; }
+  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+
+  .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+</style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="wrap">
+      <span class="brand">Thomas Bixler</span>
+      <nav class="nav" aria-label="Sections">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#toolkit">Toolkit</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <h1>Thomas&nbsp;Bixler</h1>
+      <p class="lede">
+        Psychology &amp; applied statistics student building the research and
+        analytical work behind people-focused decisions.
+        <span class="thin">Targeting I-O psychology and people analytics.</span>
+      </p>
+      <p class="detail">
+        Research Assistant in the Web &amp; Peers Lab at the University of
+        Pittsburgh's Learning Research &amp; Development Center, where I apply a
+        structured coding scheme to peer-feedback data as part of a research team
+        and build reproducible Stata analysis workflows.
+        B.S. Psychology, minor in Applied Statistics, May 2027.
+      </p>
+      <div class="links">
+        <a class="btn primary" href="https://github.com/Tbixler005/Tbixler005/blob/main/thomas_bixler_resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+        <a class="btn" href="https://github.com/Tbixler005" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/t-bixler/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="mailto:tbix2005@outlook.com">Email</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="about">
+    <div class="wrap">
+      <p class="eyebrow">Profile</p>
+      <h2>About</h2>
+      <p class="intro" style="margin-top:16px;">
+        I'm a senior at the University of Pittsburgh studying psychology with a
+        minor in applied statistics. My work sits where measurement, quantitative
+        methods, and people-facing questions meet: coding qualitative data,
+        running analyses, and turning results into something a non-statistician
+        can act on. I care about claims I can defend: reporting what the data
+        actually shows, including when the answer is "no effect."
+      </p>
+    </div>
+  </section>
+
+  <section class="section reveal" id="research">
+    <div class="wrap">
+      <p class="eyebrow">Research &amp; coursework</p>
+      <h2>Research &amp; projects</h2>
+
+      <article class="card">
+        <span class="flag">Research assistant</span>
+        <h3>Web &amp; Peers Lab, LRDC, University of Pittsburgh</h3>
+        <ul class="meta">
+          <li>PI: Prof. Chris Schunn</li>
+          <li>Structured content coding</li>
+          <li>Stata workflows</li>
+          <li>May 2026–Present</li>
+        </ul>
+        <p>
+          Contributing to an interdisciplinary project on why online peer feedback
+          produces uneven learning gains. I apply a structured coding scheme to
+          peer-feedback comments as part of a research team, help test hypotheses
+          about which feedback features drive learning, and build reproducible,
+          documented Stata analysis workflows to support the team's analyses.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="flag">Research methods lab · course</span>
+        <h3>Intellectual Humility &amp; Apology Quality</h3>
+        <ul class="meta">
+          <li>2×2 between-subjects</li>
+          <li>N = 108</li>
+          <li>Qualtrics + Prolific</li>
+          <li>Pearson r · two-way ANOVA</li>
+          <li>Co-authored APA paper</li>
+        </ul>
+        <p>
+          <span class="ink">A 2×2 between-subjects experiment I designed, ran, and
+          analyzed</span> for my research methods course, testing whether
+          intellectual humility and a victim's response affect apology quality.
+          Built and administered the study in Qualtrics; recruited via Prolific and
+          convenience sampling; analyzed with a Pearson correlation and a two-way
+          ANOVA. Found a significant positive correlation between intellectual
+          humility and apology quality, with null experimental effects traced to a
+          weak manipulation, reported openly. Co-authored the full APA paper.
+        </p>
+        <div class="card-links">
+          <a href="intellectual-humility-apology/26-final-paper.pdf" target="_blank" rel="noopener">Read the paper →</a>
+          <a href="https://github.com/Tbixler005/bixler_thomas_portfolio/tree/main/intellectual-humility-apology" target="_blank" rel="noopener">Browse all 27 documents →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <span class="flag">Course research</span>
+        <h3>Cognitive Psychology Laboratory</h3>
+        <ul class="meta">
+          <li>Individual question, group of 3</li>
+          <li>Jamovi</li>
+          <li>APA results + discussion</li>
+        </ul>
+        <p>
+          Analyzed a published dataset in Jamovi, reading its documentation,
+          defining and defending exclusion criteria, and selecting tests for my own
+          research question, then wrote the results and discussion of an APA paper.
+          Also developed an original experiment proposal end to end and delivered
+          three group research presentations with structured peer review.
+        </p>
+      </article>
+
+      <article class="card">
+        <span class="flag">Course projects</span>
+        <h3>Organizational Psychology</h3>
+        <ul class="meta">
+          <li>Team case study</li>
+          <li>5 peer-reviewed I-O sources</li>
+        </ul>
+        <p>
+          Diagnosed a real organizational problem for a team case study,
+          synthesizing five peer-reviewed articles from top I-O journals into
+          evidence-based recommendations delivered in a team presentation. Also
+          built a "personal map" project integrating several organizational-behavior
+          concepts.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section reveal" id="toolkit">
+    <div class="wrap">
+      <p class="eyebrow">Toolkit</p>
+      <h2>Skills</h2>
+      <p class="intro" style="margin-top:16px;">Things I can speak to and defend in an interview.</p>
+
+      <div class="tag-group">
+        <h4>Research methods</h4>
+        <div class="tags">
+          <span class="tag">Experimental &amp; survey design</span>
+          <span class="tag">Reliability &amp; validity</span>
+          <span class="tag">Qualtrics</span>
+          <span class="tag">Qualitative / content coding</span>
+          <span class="tag">Literature review</span>
+          <span class="tag">APA scientific writing</span>
+          <span class="tag">Human-subjects ethics (CITI)</span>
+        </div>
+      </div>
+
+      <div class="tag-group">
+        <h4>Statistical methods</h4>
+        <div class="tags">
+          <span class="tag">Hypothesis testing</span>
+          <span class="tag">Regression</span>
+          <span class="tag">Categorical data analysis</span>
+          <span class="tag">Data visualization</span>
+        </div>
+      </div>
+
+      <div class="tag-group">
+        <h4>Software</h4>
+        <div class="tags">
+          <span class="tag">Stata</span>
+          <span class="tag">R</span>
+          <span class="tag">Excel</span>
+          <span class="tag">Jamovi</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal contact" id="contact">
+    <div class="wrap">
+      <p class="eyebrow">Contact</p>
+      <h2>Get in touch</h2>
+      <p style="margin-top:16px;">
+        Open to entry-level roles in I-O psychology and people analytics, plus
+        research collaborations.
+      </p>
+      <div class="links" style="margin-top:8px;">
+        <a class="btn primary" href="mailto:tbix2005@outlook.com">Email me</a>
+        <a class="btn" href="https://www.linkedin.com/in/t-bixler/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/Tbixler005" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <span>© <span id="year"></span> Thomas Bixler</span>
+      <span>University of Pittsburgh</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!reduce && "IntersectionObserver" in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+      }, { threshold: 0.12 });
+      document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+    } else {
+      document.querySelectorAll(".reveal").forEach((el) => el.classList.add("in"));
+    }
+  </script>
+</body>
+</html>
